@@ -2,7 +2,7 @@
 
 Agente de atendimento no WhatsApp para qualquer empresa. A mensagem chega pelo WAHA, a API enfileira o pedido e um worker responde com cache semântico ou com o agente de IA.
 
-A fonte de informação é o markdown em [data/asimov.md](data/asimov.md). As regras do assistente estão em [data/prompt.xml](data/prompt.xml). Troque esses dois arquivos pelo conteúdo e pelos assuntos da empresa: o agente responde só com base neles.
+A fonte de informação é o markdown em [data/empresa.md](data/empresa.md). As regras do assistente estão em [data/prompt.xml](data/prompt.xml). Troque esses dois arquivos pelo conteúdo e pelos assuntos da empresa: o agente responde só com base neles.
 
 ## Arquitetura
 
@@ -93,7 +93,7 @@ app.py                    API FastAPI
 routers/waha_router.py    Webhook e despacho dos eventos
 services/waha_service.py  Envio da mensagem de volta ao WhatsApp
 workers/tasks.py          Fila, cache semântico e agente
-data/asimov.md            Conteúdo da empresa, usado como fonte
+data/empresa.md           Conteúdo da empresa, usado como fonte
 data/prompt.xml           Instruções do assistente
 compose.yml               WAHA, RabbitMQ, Redis e API
 scripts/                  Sobe a API e o worker

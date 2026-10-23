@@ -14,8 +14,8 @@ cache = None
 def inicializar_recurso_global(**kwargs):
   global agent, cache
 
-  with open("data/asimov.md", "r") as f:
-    asimov_doc = f.read()
+  with open("data/empresa.md", "r") as f:
+    conteudo_doc = f.read()
 
   with open("data/prompt.xml", "r") as f:
     prompt_doc = f.read()
@@ -24,7 +24,7 @@ def inicializar_recurso_global(**kwargs):
 
   agent = Agent(
     model=OpenAIChat(id="gpt-4o-mini"),
-    instructions="<fatos>" + "\n" + asimov_doc + "\n" + "</fatos>" + "\n" + prompt_doc
+    instructions="<fatos>" + "\n" + conteudo_doc + "\n" + "</fatos>" + "\n" + prompt_doc
     )
 
 
